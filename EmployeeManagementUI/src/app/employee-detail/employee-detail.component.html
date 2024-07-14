@@ -1,0 +1,16 @@
+<div class="container my-5" *ngIf="employee">
+  <h2 class="mb-4">Employee Details</h2>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ employee.firstName }} {{ employee.lastName }}</h5>
+      <p class="card-text"><strong>Email:</strong> {{ employee.email }}</p>
+      <p class="card-text"><strong>Phone:</strong> {{ employee.phoneNumber }}</p>
+      <p class="card-text"><strong>Position:</strong> {{ employee.position }}</p>
+      <p class="card-text"><strong>Department:</strong> {{ employee.department }}</p>
+    </div>
+  </div>
+  <div class="mt-3">
+    <button class="btn btn-primary" [routerLink]="['/employees']">Back to List</button>
+  </div>
+</div>
+  

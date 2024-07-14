@@ -1,0 +1,49 @@
+<form [formGroup]="employeeForm" (ngSubmit)="addEmployee()" class="container mt-4">
+  <div class="form-group">
+    <label for="firstName">First Name:</label>
+    <input id="firstName" formControlName="firstName" class="form-control" required />
+    <div *ngIf="employeeForm.controls['firstName'].invalid && (employeeForm.controls['firstName'].dirty || employeeForm.controls['firstName'].touched)" class="text-danger">
+      <div *ngIf="employeeForm.controls['firstName'].errors?.['required']">First Name is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" formControlName="lastName" class="form-control" required />
+    <div *ngIf="employeeForm.controls['lastName'].invalid && (employeeForm.controls['lastName'].dirty || employeeForm.controls['lastName'].touched)" class="text-danger">
+      <div *ngIf="employeeForm.controls['lastName'].errors?.['required']">Last Name is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" class="form-control" required />
+    <div *ngIf="employeeForm.controls['email'].invalid && (employeeForm.controls['email'].dirty || employeeForm.controls['email'].touched)" class="text-danger">
+      <div *ngIf="employeeForm.controls['email'].errors?.['required']">Email is required.</div>
+      <div *ngIf="employeeForm.controls['email'].errors?.['email']">Invalid email format.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="phoneNumber">Phone Number:</label>
+    <input id="phoneNumber" formControlName="phoneNumber" class="form-control" required />
+    <div *ngIf="employeeForm.controls['phoneNumber'].invalid && (employeeForm.controls['phoneNumber'].dirty || employeeForm.controls['phoneNumber'].touched)" class="text-danger">
+      <div *ngIf="employeeForm.controls['phoneNumber'].errors?.['required']">Phone Number is required.</div>
+      <div *ngIf="employeeForm.controls['phoneNumber'].errors?.['pattern']">Invalid phone number format.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="position">Position:</label>
+    <input id="position" formControlName="position" class="form-control" required />
+    <div *ngIf="employeeForm.controls['position'].invalid && (employeeForm.controls['position'].dirty || employeeForm.controls['position'].touched)" class="text-danger">
+      <div *ngIf="employeeForm.controls['position'].errors?.['required']">Position is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="department">Department:</label>
+    <input id="department" formControlName="department" class="form-control" required />
+    <div *ngIf="employeeForm.controls['department'].invalid && (employeeForm.controls['department'].dirty || employeeForm.controls['department'].touched)" class="text-danger">
+      <div *ngIf="employeeForm.controls['department'].errors?.['required']">Department is required.</div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-warning mt-3 me-3" [disabled]="employeeForm.invalid">Add Employee</button>
+  <button class="btn btn-primary mt-3" [routerLink]="['/employees']">Back to List</button>
+</form>
+
