@@ -1,7 +1,5 @@
-<<<<<<< HEAD
+
 # EmployeeManagement
-=======
->>>>>>> origin/main
 
 #Overview
 
